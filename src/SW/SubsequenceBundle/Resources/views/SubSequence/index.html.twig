@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Subsequence Weighting{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    {% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>Subsequence Weighting Results</h1>
+                <div id="welcome">
+                    <a href="https://www.hackerrank.com/challenges/subsequence-weighting" target="blank">
+                        Subsequence Weighting 
+                    </a>
+                <div>
+                <div id="welcome">
+                     <strong><p>Input File Analyzed: web/Upload/input.txt</p></strong>
+                    <object type="text/plain" data='../../../../../../../../web/Upload/input.txt' width="400" height="180"></object>
+                </div>
+                <div id="welcome">
+                    <strong><p>List of Weight Output</p></strong>
+                </div>
+                <div id="welcome">
+                    <ul>
+                    {% for key, weight in weightlist %}
+                        <li>{{ key }}: <strong>{{ weight}}</strong></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div id="welcome">
+                    <p>By Jose Manuel Guzman Guerrero - 2016 </p>
+                </div>    
+        </div>
+    </div>
+{% endblock %}
+{% block stylesheets %}
+<style>
+    body { background: #FFFFFF; font: 18px/1.5 sans-serif; }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em;color:blue; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+    strong { color: Red; }
+    #wrapper { background: #DAD9FF; margin: 1em auto; max-width: 800px; width: 95%; }
+    #container { padding: 2em; box-shadow:  3px -1px 12px 0px rgba(14, 50, 50, 0.72);}
+    #welcome, #status { margin-bottom: 2em; }
+    #welcome h1 span { display: block; font-size: 75%; }
+    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+    #icon-book { display: none; }
+
+    @media (min-width: 768px) {
+        #wrapper { width: 80%; margin: 2em auto; }
+        #icon-book { display: inline-block; }
+        #status a, #next a { display: block; }
+        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    }
+</style>
+{% endblock %}
+</html>
